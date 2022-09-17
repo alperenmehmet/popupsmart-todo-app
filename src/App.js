@@ -1,5 +1,7 @@
+import AppWrapper from './components/AppWrapper'
+
 function App() {
-  return <div className="">hello</div>
+  return <AppWrapper />
 }
 
 export default App
