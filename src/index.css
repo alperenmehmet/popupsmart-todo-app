@@ -1,13 +1,181 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --border-radius: 3px;
+  --transition: all 0.3s linear;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.dark-theme {
+  --clr-background: #1c2022;
+  --clr-title: rgb(187, 46, 31);
+  --clr-todo-background: rgb(36, 40, 42);
+  --clr-text: #fff;
 }
+
+.light-theme {
+  --clr-background: #fff;
+  --clr-title: rgb(187, 46, 31);
+  --clr-todo-background: rgba(0, 0, 0, 0.08);
+  --clr-text: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu,
+    Cantarell, Helvetica Neue, sans-serif;
+  background: var(--clr-background);
+  transition: var(--transition);
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-center {
+  max-width: 1170px;
+  width: 95vw;
+  margin: 0 auto;
+}
+
+input[type=text] {
+  width: 20rem;
+  padding: 12px 20px;
+
+  color: var(--clr-text);
+  background: var(--clr-todo-background);
+  border-radius: var(--border-radius);
+  border: none;
+}
+
+.navbar{
+  margin-top: 3rem;
+}
+
+.navbar-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.navbar-links i{
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.nav-link{
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-title);
+  text-transform: capitalize;
+}
+
+.sun-icon{
+  color: rgb(255, 215, 0);
+  cursor: pointer;
+}
+
+.sun-icon,.moon-icon{
+  transition: var(--transition);
+}
+
+.sun-icon:hover,.moon-icon:hover{
+  transform: scale(1.2);
+}
+
+.login-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+.login-button{
+  color: var(--clr-text);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+}
+
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.add-todo-btn{
+  color: #fff;
+  background: #023e8a;
+  margin-left: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+}
+
+.todo-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 24rem;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.todo-content{
+  color: var(--clr-text);
+}
+
+
+
+.action-buttons button{
+  border: none;
+  background: none;
+}
+
+.edit-button {
+  justify-content: center;
+  border: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  color: rgb(82, 82, 214);
+}
+.edit-button:hover {
+  color: blue;
+}
+.delete-button {
+  justify-content: center;
+  border: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  color: rgb(224, 93, 93);
+}
+.delete-button:hover {
+  color: red;
+}
+
+.error{
+  color: red;
+}
+

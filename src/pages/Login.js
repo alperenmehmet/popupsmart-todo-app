@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useGlobalContext } from '../context'
 
 const Login = () => {
@@ -10,13 +10,14 @@ const Login = () => {
   }, [userName])
 
   const handleChange = (e) => {
+    e.preventDefault()
     setUserName(e.target.value)
   }
 
   return (
-    <form onChange={handleChange}>
-      <input type="text" />
-      <Link to="/main-todo" type="submit">
+    <form onChange={handleChange} className="login-page">
+      <input type="text" placeholder="Please enter a username" />
+      <Link to="/main-todo" type="submit" className="login-button">
         go to todos page
       </Link>
     </form>

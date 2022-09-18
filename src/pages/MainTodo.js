@@ -1,15 +1,13 @@
-import { useEffect } from 'react'
-import { useGlobalContext } from '../context'
+import ListTodo from '../components/ListTodo'
+import AddTodo from '../components/AddTodo'
 
 const MainTodo = () => {
-  const { setUserName, userName } = useGlobalContext()
-  useEffect(() => {
-    const userName = JSON.parse(localStorage.getItem('userName'))
-    if (userName) {
-      setUserName(userName)
-    }
-  }, [])
-  return <div>hello {userName}</div>
+  return (
+    <>
+      <AddTodo />
+      <ListTodo />
+    </>
+  )
 }
 
 export default MainTodo
